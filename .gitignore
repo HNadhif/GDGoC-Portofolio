@@ -1,0 +1,14 @@
+# JetBrains IDE (WebStorm)
+.idea/
+*.iml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional: log files
+*.log
+
+# Optional: dist/build jika kamu generate output sendiri
+dist/
+build/
