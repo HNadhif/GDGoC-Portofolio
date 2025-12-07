@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    position: relative;
+    background-image: linear-gradient(#F1F3E0, #CAD8A4);
+    min-height: 100vh;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    overflow-x: hidden;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.decor-1 {
+    top: 0;
+    right: 0;
+    width: 1000px;
+}
+
+.decor-2 {
+    bottom: 0;
+    left: 0;
+    width: 1000px;
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    background-image: linear-gradient(to right, #B3BE96, #778873);
+}
+
+nav > ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%;
+}
+
+nav > ul > li {
+    margin-left: 3rem;
+}
+
+nav > ul > li a {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2.8rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+nav > ul > li a:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+nav > ul > li a.active {
+    color: #F1F3E0;
+    font-weight: 500;
+}
+
+nav > ul > li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #F1F3E0;
+}
+
+nav > ul > li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+nav > ul > li a:hover::after {
+    width: 100%;
+}
+
+.nav-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-left: 2.2rem;
+}
+
+.container {
+    width: 100%;
+    padding: 12rem 10% 6rem;
+    position: relative;
+    z-index: 5;
+    display: block;
+}
+
+.page-title h1 {
+    font-size: 6rem;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 2rem;
+}
+
+.about-section {
+    margin-bottom: 8rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.about-text {
+    flex: 1.5;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #34495E;
+    text-align: justify;
+}
+
+.about-text p:first-of-type {
+    font-weight: 400;
+}
+
+.about-image img {
+    width: 380px;
+    max-width: 100%;
+    height: auto;
+}
+
+.dreams-section {
+    margin-top: 6rem;
+    position: relative;
+    z-index: 2;
+}
+
+.dreams-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.dream-item {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 2rem 2.5rem;
+    border-radius: 1.6rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(120, 136, 115, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dream-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.08);
+}
+
+.dream-item h3 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 0.8rem;
+}
+
+.dream-item p {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: #34495E;
+}
+
+.skills-content {
+    margin-top: 3rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.skills-section {
+    margin-top: 6rem;
+}
+
+.skill-category {
+    flex: 1;
+}
+
+.skill-category h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.skill-desc{
+    font-size: 1.5rem;
+}
+
+.skill-level {
+    width: 100%;
+    height: 1rem;
+    background: #dfe6d5;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.level-bar {
+    height: 100%;
+    background: #778873;
+}
+
+.java-bar { width: 50%; }
+.org-bar { width: 85%; }
+
+.learning-bar { background: #dfe6d5; }
+
+.progress-animation {
+    height: 100%;
+    background: #B3BE96;
+    animation: progressLoad 2s infinite alternate ease-in-out;
+}
+
+@keyframes progressLoad {
+    0% { width: 10%; }
+    100% { width: 80%; }
+}
+
+.philosophy-section {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.philosophy-content h3 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.philosophy-quote {
+    margin-top: 1.4rem;
+    font-size: 2rem;
+    font-style: italic;
+    color: #34495E;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background-image: linear-gradient(to right, #778873, #B3BE96);
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    z-index: 10;
+}
+
+.footer-text {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+@media (max-width: 1024px) {
+    .page-title h1 {
+        font-size: 6rem;
+        text-align: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-content > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 300px;
+    }
+
+    .container {
+        padding: 12rem 5% 6rem;
+    }
+
+    .skills-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title h1 {
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    nav > ul > li a {
+        font-size: 1.6rem;
+    }
+
+    .dream-item h3 {
+        font-size: 2rem;
+    }
+    .dream-item p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title h1 {
+        font-size: 3.2rem;
+        text-align: center;
+    }
+
+    nav > ul {
+        padding-right: 2%;
+    }
+
+    nav > ul > li a {
+        font-size: 1.3rem;
+    }
+
+    .nav-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

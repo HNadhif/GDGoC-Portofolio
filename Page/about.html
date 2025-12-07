@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Haidar Nadhifatha Putra</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS_File/about.css">
+</head>
+<body>
+<img src="CSS_File/Asset/Corner atas.png" alt="Decorasi atas" class="decor decor-1">
+<img src="CSS_File/Asset/Corner Bawah.png" alt="Decorasi bawah" class="decor decor-2">
+
+<nav>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html" class="active">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><img src="CSS_File/Asset/Circle.png" class="nav-icon" alt="Navigation Icon"></li>
+    </ul>
+</nav>
+
+<main class="container fade-in">
+    <section class="page-title">
+        <h1>About Me</h1>
+    </section>
+
+    <section class="about-section fade-in">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">About</h2>
+                <div class="about-text">
+                    <p>
+                        Saya Haidar Nadhifatha Putra, mahasiswa Teknik Informatika dengan minat dalam pengembangan perangkat lunak.
+                        Fokus saya saat ini adalah membangun dasar yang kuat dalam pemrograman dan memahami bagaimana teknologi dapat
+                        diterapkan untuk menyelesaikan masalah nyata.
+                    </p>
+
+                    <p>
+                        Sebagai seorang pembelajar, saya percaya bahwa proses pengembangan skill adalah perjalanan bertahap.
+                        Saat ini, saya sedang mengasah kemampuan dasar dan mengeksplorasi berbagai aspek teknologi informasi
+                        untuk menemukan bidang yang paling sesuai dengan passion saya.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="about-image">
+                <img src="CSS_File/Asset/Frame_Gambar.png" alt="Haidar Photo">
+            </div>
+        </div>
+    </section>
+
+    <section class="dreams-section fade-in">
+        <h2 class="section-title">Dreams</h2>
+
+        <div class="dreams-content">
+
+            <div class="dream-item">
+                <h3>Cloud Computing</h3>
+                <p>
+                    Saya ingin memulai dengan memahami dasar-dasar komputasi awan, bagaimana aplikasi dibangun,
+                    dijalankan, dan diskalakan di infrastruktur modern seperti AWS, Azure, atau GCP.
+                </p>
+            </div>
+
+            <div class="dream-item">
+                <h3>Web Development</h3>
+                <p>
+                    Setelah memahami cloud, saya ingin memperkuat kemampuan dalam pengembangan web agar bisa
+                    membangun aplikasi modern yang responsif dan efisien.
+                </p>
+            </div>
+
+            <div class="dream-item">
+                <h3>Machine Learning</h3>
+                <p>
+                    Saya ingin mengeksplorasi bagaimana data dapat digunakan untuk membangun model
+                    prediksi yang dapat membantu memecahkan masalah nyata.
+                </p>
+            </div>
+
+            <div class="dream-item">
+                <h3>Artificial Intelligence</h3>
+                <p>
+                    Tahap akhir dari perjalanan saya adalah memahami teknologi AI yang lebih kompleks,
+                    dan bagaimana mengintegrasikannya ke dalam solusi perangkat lunak modern.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="skills-section fade-in">
+        <h2 class="section-title">Skill</h2>
+
+        <div class="skills-content">
+
+            <div class="skill-category">
+                <h3>Java</h3>
+                <div class="skill-level">
+                    <div class="level-bar java-bar"></div>
+                </div>
+                <p class="skill-desc">Memahami konsep dasar OOP, control structures, dan algoritma dalam Java.</p>
+            </div>
+
+            <div class="skill-category">
+                <h3>Organisasi</h3>
+                <div class="skill-level">
+                    <div class="level-bar org-bar"></div>
+                </div>
+                <p class="skill-desc">
+                    Pengalaman dalam manajemen tim, koordinasi kegiatan, dan administrasi organisasi.
+                </p>
+            </div>
+
+            <div class="skill-category">
+                <h3>Mencari Skill</h3>
+                <div class="skill-level">
+                    <div class="level-bar learning-bar">
+                        <div class="progress-animation"></div>
+                    </div>
+                </div>
+                <p class="skill-desc">
+                    Masih mencari skill ya gaes
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="philosophy-section fade-in">
+        <div class="philosophy-content">
+            <h3>Prinsip Hidupku</h3>
+            <p class="philosophy-quote">
+                "Tetap senyum, semangat, dan berusaha keras"
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-text">
+        © 2025 Haidar Nadhifatha Putra
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body>
+</html>

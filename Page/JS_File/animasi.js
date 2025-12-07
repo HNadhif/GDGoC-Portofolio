@@ -27,24 +27,24 @@ function initTypewriter() {
 
 // Fungsi untuk Fade-in Animation
 function initFadeIn() {
-    // Pilih elemen yang akan dianimasikan
+    // Sekarang pilih <li> saja, bukan <a> langsung
+    // Karena animasi tetap di <li>, <a> akan ikut parentnya
     const elementsToAnimate = [
         ...document.querySelectorAll('nav > ul > li'),
         document.querySelector('.profile-pic'),
         document.querySelector('.text-box')
-    ].filter(el => el !== null); // Filter null elements
+    ].filter(el => el !== null);
 
-    // Tambahkan class fade-in
+    // Sisanya sama...
     elementsToAnimate.forEach(el => {
         el.classList.add('fade-in');
     });
 
-    // Trigger animasi dengan delay
     setTimeout(() => {
         elementsToAnimate.forEach((el, index) => {
             setTimeout(() => {
                 el.classList.add('visible');
-            }, index * 150); // Stagger effect
+            }, index * 150);
         });
     }, 500);
 }
