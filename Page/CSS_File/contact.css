@@ -1,4 +1,3 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Fade */
+/* Animasi Fade */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -36,7 +35,7 @@ html, body {
     transform: translateY(0);
 }
 
-/* Decor */
+/* Posisi Decor BG */
 .decor {
     position: absolute;
     pointer-events: none;
@@ -55,7 +54,7 @@ html, body {
     width: 1000px;
 }
 
-/* NAVBAR */
+/* Navigasi */
 nav {
     width: 100%;
     position: absolute;
@@ -132,7 +131,7 @@ nav > ul > li a:hover::after {
     margin-left: 2.2rem;
 }
 
-/* Container */
+/* Isi utama */
 .container {
     width: 100%;
     padding: 12rem 10% 6rem;
@@ -141,7 +140,7 @@ nav > ul > li a:hover::after {
     display: block;
 }
 
-/* Page Title */
+/* Title */
 .page-title h1 {
     font-size: 6rem;
     font-weight: 600;
@@ -158,148 +157,125 @@ nav > ul > li a:hover::after {
     margin-bottom: 2rem;
 }
 
-/* ABOUT SECTION */
-.about-section {
-    margin-bottom: 8rem;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-}
-
-.about-text {
-    flex: 1.5;
-    font-size: 1.8rem;
-    line-height: 1.8;
-    color: #34495E;
-    text-align: justify;
-}
-
-.about-text p:first-of-type {
-    font-weight: 400;
-}
-
-.about-image img {
-    width: 380px;
-    max-width: 100%;
-    height: auto;
-}
-
-/* DREAMS SECTION */
-.dreams-section {
+/* Section Contact */
+.contact-section {
     margin-top: 6rem;
-    position: relative;
-    z-index: 2;
 }
 
-.dreams-content {
+.contact-cards {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 2.5rem;
 }
 
-.dream-item {
+/* Clickable Contact Cards */
+.contact-cards a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.contact-card {
     background: rgba(255, 255, 255, 0.4);
-    padding: 2rem 2.5rem;
+    padding: 2.2rem 3rem 2.2rem 2.6rem;
     border-radius: 1.6rem;
-    backdrop-filter: blur(4px);
     border: 1px solid rgba(120, 136, 115, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
 }
 
-.dream-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 18px rgba(0,0,0,0.08);
+/* Hover effect */
+.contact-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(120, 136, 115, 0.4);
 }
 
-.dream-item h3 {
+/* Card Title */
+.contact-card h3 {
     font-size: 2.4rem;
     font-weight: 600;
     color: #2C3E50;
     margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
 }
 
-.dream-item p {
+.contact-card:hover h3 {
+    color: #778873;
+}
+
+/* Card Text */
+.contact-card p {
     font-size: 1.7rem;
     line-height: 1.7;
     color: #34495E;
+    transition: color 0.3s ease;
 }
 
-/* SKILLS SECTION */
-.skills-content {
-    margin-top: 3rem;
-    display: flex;
-    gap: 4rem;
-}
-
-.skills-section {
-    margin-top: 6rem;
-}
-
-.skill-category {
-    flex: 1;
-}
-
-.skill-category h3 {
-    font-size: 2.2rem;
-    font-weight: 600;
+.contact-card:hover p {
     color: #2C3E50;
 }
 
-.skill-desc{
-    font-size: 1.5rem;
+/* Arrow Indicator */
+.contact-card::after {
+    content: '→';
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #778873;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
-.skill-level {
+.contact-card:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Subtle background effect on hover */
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    height: 1rem;
-    background: #dfe6d5;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 1rem 0;
-}
-
-.level-bar {
     height: 100%;
-    background: #778873;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
 }
 
-.java-bar { width: 50%; }
-.org-bar { width: 85%; }
-
-.learning-bar { background: #dfe6d5; }
-
-.progress-animation {
-    height: 100%;
-    background: #B3BE96;
-    animation: progressLoad 2s infinite alternate ease-in-out;
+.contact-card:hover::before {
+    left: 100%;
 }
 
-@keyframes progressLoad {
-    0% { width: 10%; }
-    100% { width: 80%; }
+/* Hover Effect */
+.contact-card[href^="mailto:"]:hover h3 {
+    color: #EA4335;
 }
 
-/* PHILOSOPHY SECTION */
-.philosophy-section {
-    text-align: center;
-    margin-top: 6rem;
+.contact-card[href*="whatsapp"]:hover h3 {
+    color: #25D366;
 }
 
-.philosophy-content h3 {
-    font-size: 2.6rem;
-    font-weight: 600;
-    color: #2C3E50;
+.contact-card[href*="instagram"]:hover h3 {
+    color: #E4405F;
 }
 
-.philosophy-quote {
-    margin-top: 1.4rem;
-    font-size: 2rem;
-    font-style: italic;
-    color: #34495E;
+.contact-card[href*="github"]:hover h3 {
+    color: #333;
+}
+
+.contact-card:focus {
+    outline: 2px solid #778873;
+    outline-offset: 2px;
 }
 
 /* Footer */
@@ -321,76 +297,83 @@ footer {
     color: white;
 }
 
+/* Responsive Design */
 
-/* RESPONSIVE DESIGN */
-
-/* Tablet - 1024px */
+/* 1024px */
 @media (max-width: 1024px) {
     .page-title h1 {
-        font-size: 6rem;
+        font-size: 5.5rem;
         text-align: center;
     }
 
-    .about-content {
-        flex-direction: column;
-        align-items: center;
+    .section-title {
         text-align: center;
-    }
-
-    .about-content > div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-text {
-        max-width: 700px;
-        text-align: center;
-    }
-
-    .about-image img {
-        width: 300px;
+        font-size: 2.8rem;
     }
 
     .container {
         padding: 12rem 5% 6rem;
     }
 
-    .skills-content {
-        flex-direction: column;
-        text-align: center;
+    .contact-cards {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .contact-card {
+        padding: 2rem 2.8rem 2rem 2.4rem;
     }
 }
 
-/* Tablet - 768px */
+/* 768px */
 @media (max-width: 768px) {
     .page-title h1 {
         text-align: center;
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
 
     .section-title {
         text-align: center;
+        font-size: 2.8rem;
     }
 
     nav > ul > li a {
+        font-size: 2rem;
+    }
+
+    .contact-card h3 {
+        font-size: 2.2rem;
+    }
+
+    .contact-card p {
         font-size: 1.6rem;
     }
 
-    .dream-item h3 {
-        font-size: 2rem;
+    .contact-card::after {
+        font-size: 2.2rem;
+        right: 1.8rem;
     }
-    .dream-item p {
-        font-size: 1.5rem;
+
+    nav > ul > li {
+        margin-left: 2rem;
+    }
+
+    .decor-1,
+    .decor-2 {
+        width: 600px;
+        opacity: 0.7;
     }
 }
 
-/* Mobile - 480px */
+/* 480px */
 @media (max-width: 480px) {
     .page-title h1 {
-        font-size: 3.2rem;
+        font-size: 3.8rem;
         text-align: center;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
     }
 
     nav > ul {
@@ -398,12 +381,44 @@ footer {
     }
 
     nav > ul > li a {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+    }
+
+    nav > ul > li {
+        margin-left: 1.5rem;
     }
 
     .nav-icon {
         width: 3rem;
         height: 3rem;
+        margin-left: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.8rem 2.2rem 1.8rem 2rem;
+    }
+
+    .contact-card h3 {
+        font-size: 2rem;
+    }
+
+    .contact-card p {
+        font-size: 1.5rem;
+    }
+
+    .contact-card::after {
+        font-size: 2rem;
+        right: 1.5rem;
+    }
+
+    .contact-cards {
+        gap: 2rem;
+    }
+
+    .decor-1,
+    .decor-2 {
+        width: 400px;
+        opacity: 0.5;
     }
 }
 

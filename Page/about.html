@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Haidar Nadhifatha Putra</title>
 
+    <!-- Font dan CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="CSS_File/about.css">
 </head>
+
 <body>
+<!-- Decor BG -->
 <img src="CSS_File/Asset/Corner atas.png" alt="Decorasi atas" class="decor decor-1">
 <img src="CSS_File/Asset/Corner Bawah.png" alt="Decorasi bawah" class="decor decor-2">
 
+<!-- Navigasi Bar -->
 <nav>
     <ul>
         <li><a href="index.html">HOME</a></li>
@@ -24,13 +27,19 @@
     </ul>
 </nav>
 
+<!-- Isi Utama -->
 <main class="container fade-in">
+
+    <!-- Judul Halaman -->
     <section class="page-title">
         <h1>About Me</h1>
     </section>
 
+    <!-- Section About -->
     <section class="about-section fade-in">
         <div class="about-content">
+
+            <!-- Teks About -->
             <div class="about-text">
                 <h2 class="section-title">About</h2>
                 <div class="about-text">
@@ -48,13 +57,15 @@
                 </div>
             </div>
 
-
+            <!-- Gambar About -->
             <div class="about-image">
                 <img src="CSS_File/Asset/Frame_Gambar.png" alt="Haidar Photo">
             </div>
+
         </div>
     </section>
 
+    <!-- Section Dreams -->
     <section class="dreams-section fade-in">
         <h2 class="section-title">Dreams</h2>
 
@@ -95,6 +106,7 @@
         </div>
     </section>
 
+    <!-- Section Skills -->
     <section class="skills-section fade-in">
         <h2 class="section-title">Skill</h2>
 
@@ -105,7 +117,9 @@
                 <div class="skill-level">
                     <div class="level-bar java-bar"></div>
                 </div>
-                <p class="skill-desc">Memahami konsep dasar OOP, control structures, dan algoritma dalam Java.</p>
+                <p class="skill-desc">
+                    Memahami konsep dasar OOP, control structures, dan algoritma dalam Java.
+                </p>
             </div>
 
             <div class="skill-category">
@@ -126,13 +140,14 @@
                     </div>
                 </div>
                 <p class="skill-desc">
-                    Masih mencari skill ya gaes
+                    Masih mencari skill, mohon menunggu
                 </p>
             </div>
 
         </div>
     </section>
 
+    <!-- Section Filosofi -->
     <section class="philosophy-section fade-in">
         <div class="philosophy-content">
             <h3>Prinsip Hidupku</h3>
@@ -144,12 +159,14 @@
 
 </main>
 
+<!-- Footer -->
 <footer>
     <div class="footer-text">
         © 2025 Haidar Nadhifatha Putra
     </div>
 </footer>
 
+<!-- JS -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const fadeElements = document.querySelectorAll(".fade-in");
